@@ -24,10 +24,10 @@ const images = [
 
 const ulEl = document.querySelector(".gallery");
 
-const listImages = images
+const listImg = images
   .map((el) => `<li> <img src="${el.url}"  alt="${el.alt}" /> </li>`)
   .join("");
 
-ulEl.insertAdjacentHTML("afterbegin", listImages);
+ulEl.insertAdjacentHTML("afterbegin", listImg);
 
 ulEl.style.display = "flex";
