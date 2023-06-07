@@ -14,14 +14,14 @@ function getRandomHexColor() {
 // Для генерування випадкового кольору використовуй функцію getRandomHexColor.
 
 const buttonChangeColor = document.querySelector(".change-color");
-const bodyEl = document.querySelector(".widget");
+const body = document.querySelector("body");
 const typeOfColor = document.querySelector(".color");
 
 function changeColor() {
-  bodyEl.style.backgroundColor = `#${Math.floor(Math.random() * 16777215)
+  body.style.backgroundColor = `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
-  typeOfColor.textContent = `- ${bodyEl.style.backgroundColor}`;
+  typeOfColor.textContent = `- ${body.style.backgroundColor}`;
 }
 
 buttonChangeColor.addEventListener("click", changeColor);

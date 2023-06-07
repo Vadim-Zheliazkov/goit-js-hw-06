@@ -39,20 +39,33 @@
 // const buttonSubmit = document.querySelector(".btn");
 // console.log(buttonSubmit);
 
-const inputs = document.querySelector(".login-form");
-// console.log(inputs);
-inputs.addEventListener("submit", checkFormsSubmit);
+// const inputs = document.querySelector(".login-form");
+// // console.log(inputs);
+// inputs.addEventListener("submit", checkFormsSubmit);
+
+// function checkFormsSubmit(event) {
+//   event.preventDefault();
+//   const email = event.currentTarget.elements.email;
+//   const password = event.currentTarget.elements.password;
+
+//   if (email.value === "" || password.value === "") {
+//     alert("Please fill in all the fields!");
+//   } else {
+//     console.log(`Login: ${email.value}, Password: ${password.value}`);
+//   }
+
+//   event.currentTarget.reset();
+// }
+
+const accessToForm = document.querySelector(".login-form");
+console.log(accessToForm);
+accessToForm.addEventListener("submit", checkFormsSubmit);
 
 function checkFormsSubmit(event) {
   event.preventDefault();
-  const email = event.currentTarget.elements.email;
-  const password = event.currentTarget.elements.password;
 
-  if (email.value === "" || password.value === "") {
-    alert("Please fill in all the fields!");
-  } else {
-    console.log(`Login: ${email.value}, Password: ${password.value}`);
-  }
+  const formData = new FormData(event.currentTarget);
+  formData.forEach((data, nameInput) => console.log(`${data} - ${nameInput}`));
 
   event.currentTarget.reset();
 }
